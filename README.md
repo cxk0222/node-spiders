@@ -80,6 +80,6 @@ const __main = function() {
 __main()
 ```
 
-## -- 抓取结果 --
+## 七、抓取的结果（图片与处理后的json文件）
 ![imgs](/douban-img.png)
 ![json](/douban-json.png)
