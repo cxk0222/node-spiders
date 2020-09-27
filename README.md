@@ -3,7 +3,7 @@
 
 ## 一、需要的模块
 
-```
+```javascript
 // 发送请求
 const request = require('request')
 // 处理 dom 结构
@@ -11,7 +11,7 @@ const cheerio = require('cheerio')
 ```
 
 ## 二、 创建一个类当模板（保存你想要得到的信息）
-```
+```javascript
 function Movie() {
   this.name = ''
   this.score = 0
@@ -22,7 +22,7 @@ function Movie() {
 ```
 
 ## 三、发送 http 请求
-```
+```javascript
 const moviesFromUrl = function(url) {
   request(url, function(error, response, body) {
     if (error === null && response.statusCode == 200) {
@@ -36,7 +36,7 @@ const moviesFromUrl = function(url) {
 ```
 
 ## 四、处理 dom ，获取标签中的文本信息或属性
-```
+```javascript
 const movieFromDiv = function(div) {
   const movie = new Movie()
   const e = cheerio.load(div)
@@ -54,7 +54,7 @@ const movieFromDiv = function(div) {
 ```
 
 ## 五、保存到本地
-```
+```javascript
 const saveMovie = function(movies) {
   const fs = require('fs')
   // 可以改变的文件名
@@ -71,7 +71,7 @@ const saveMovie = function(movies) {
 ```
 
 ## 六、创建一个入口函数并执行
-```
+```javascript
 const __main = function() {
   const url = 'https://movie.douban.com/top250'
   moviesFromUrl(url)
